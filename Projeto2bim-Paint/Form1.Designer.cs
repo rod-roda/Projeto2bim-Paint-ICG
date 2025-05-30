@@ -119,7 +119,7 @@ namespace Projeto2bim_Paint
             // 
             btn_losangulo.FlatAppearance.BorderColor = Color.White;
             btn_losangulo.FlatStyle = FlatStyle.Flat;
-            btn_losangulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_losangulo.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_losangulo.Location = new Point(345, 3);
             btn_losangulo.Name = "btn_losangulo";
             btn_losangulo.Size = new Size(51, 51);
@@ -132,7 +132,7 @@ namespace Projeto2bim_Paint
             // 
             btn_elipse.FlatAppearance.BorderColor = Color.White;
             btn_elipse.FlatStyle = FlatStyle.Flat;
-            btn_elipse.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_elipse.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_elipse.Location = new Point(288, 3);
             btn_elipse.Name = "btn_elipse";
             btn_elipse.Size = new Size(51, 51);
@@ -145,7 +145,7 @@ namespace Projeto2bim_Paint
             // 
             btn_triangulo.FlatAppearance.BorderColor = Color.White;
             btn_triangulo.FlatStyle = FlatStyle.Flat;
-            btn_triangulo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_triangulo.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_triangulo.Location = new Point(231, 3);
             btn_triangulo.Name = "btn_triangulo";
             btn_triangulo.Size = new Size(51, 51);
@@ -158,7 +158,7 @@ namespace Projeto2bim_Paint
             // 
             btn_pentagono.FlatAppearance.BorderColor = Color.White;
             btn_pentagono.FlatStyle = FlatStyle.Flat;
-            btn_pentagono.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_pentagono.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_pentagono.Location = new Point(174, 3);
             btn_pentagono.Name = "btn_pentagono";
             btn_pentagono.Size = new Size(51, 51);
@@ -172,7 +172,7 @@ namespace Projeto2bim_Paint
             btn_circle.BackColor = SystemColors.Menu;
             btn_circle.FlatAppearance.BorderColor = Color.White;
             btn_circle.FlatStyle = FlatStyle.Flat;
-            btn_circle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_circle.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_circle.Location = new Point(117, 3);
             btn_circle.Name = "btn_circle";
             btn_circle.Size = new Size(51, 51);
@@ -185,7 +185,7 @@ namespace Projeto2bim_Paint
             // 
             btn_square.FlatAppearance.BorderColor = Color.White;
             btn_square.FlatStyle = FlatStyle.Flat;
-            btn_square.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_square.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_square.Location = new Point(60, 3);
             btn_square.Name = "btn_square";
             btn_square.Size = new Size(51, 51);
@@ -198,7 +198,7 @@ namespace Projeto2bim_Paint
             // 
             btn_reta.FlatAppearance.BorderColor = Color.White;
             btn_reta.FlatStyle = FlatStyle.Flat;
-            btn_reta.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_reta.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn_reta.Location = new Point(3, 3);
             btn_reta.Name = "btn_reta";
             btn_reta.Size = new Size(51, 51);
