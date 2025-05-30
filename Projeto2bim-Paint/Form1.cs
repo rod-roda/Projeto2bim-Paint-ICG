@@ -63,10 +63,10 @@ namespace Projeto2bim_Paint
         void IniciarContornos()
         {
             cbbox_contorno.Items.Add("Contorno");
-            cbbox_contorno.Items.Add("Linha SÛlida");
+            cbbox_contorno.Items.Add("Linha S√≥lida");
             cbbox_contorno.Items.Add("Linha Tracejada");
-            cbbox_contorno.Items.Add("Linha TraÁo Ponto");
-            cbbox_contorno.Items.Add("Linha TraÁo dois pontos");
+            cbbox_contorno.Items.Add("Linha Tra√ßo Ponto");
+            cbbox_contorno.Items.Add("Linha Tra√ßo dois pontos");
             cbbox_contorno.Items.Add("Linha Pontilhada");
 
             cbbox_contorno.SelectedIndex = 0;
@@ -85,14 +85,14 @@ namespace Projeto2bim_Paint
             return caneta;
         }
 
-        void DesenharElipse(PaintEventArgs e, Pen caneta)
+        void DesenharElipse(PaintEventArgs e, int[] elipse, Pen caneta)
         {
-            e.Graphics.DrawEllipse(caneta, elipse[0], elipse[1], elipse[2], elipse[3]);
+            e.Graphics.DrawEllipse(caneta, elipse[0] - elipse[2]/2, elipse[1] - elipse[3]/2, elipse[2], elipse[3]);
         }
 
-        void DesenharCirculo(PaintEventArgs e, Pen caneta)
+        void DesenharCirculo(PaintEventArgs e, int[] circulo, Pen caneta)
         {
-            e.Graphics.DrawEllipse(caneta, circulo[0], circulo[1], circulo[2] * 2, circulo[2] * 2);
+            e.Graphics.DrawEllipse(caneta, circulo[0] - circulo[2], circulo[1] - circulo[2], circulo[2] * 2, circulo[2] * 2);
         }
 
         void DesenharReta(int x0, int y0, int x1, int y1, Pen caneta, PaintEventArgs e)
@@ -145,10 +145,10 @@ namespace Projeto2bim_Paint
                 DesenharRetangulo(e, pos[0], pos[1], pos[2], pos[3], pen);
 
             foreach (var (pos, pen) in formas["Elipses"])
-                e.Graphics.DrawEllipse(pen, pos[0], pos[1], pos[2], pos[3]);
+                DesenharElipse(e, pos, pen);
 
             foreach (var (pos, pen) in formas["Circulos"])
-                e.Graphics.DrawEllipse(pen, pos[0], pos[1], pos[2] * 2, pos[2] * 2);
+                DesenharCirculo(e, pos, pen);
 
             foreach (var (pos, pen) in formas["Losangulos"])
                 DesenharLosangulo(e, pos, pen);
@@ -387,7 +387,7 @@ namespace Projeto2bim_Paint
             }
             else if (btn_circle.BackColor == Color.LightGray)
             {
-                string raioStr = Interaction.InputBox("Digite o raio do cÌrculo:", "Raio do CÌrculo", "Digite aqui...");
+                string raioStr = Interaction.InputBox("Digite o raio do c√≠rculo:", "Raio do C√≠rculo", "Digite aqui...");
                 int raio;
 
                 if (!string.IsNullOrEmpty(raioStr) && int.TryParse(raioStr, out raio))
@@ -629,7 +629,7 @@ namespace Projeto2bim_Paint
 
             if (!File.Exists(caminho))
             {
-                MessageBox.Show("Arquivo n„o encontrado!");
+                MessageBox.Show("Arquivo n√£o encontrado!");
                 return;
             }
 
