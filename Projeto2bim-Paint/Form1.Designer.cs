@@ -675,6 +675,7 @@ namespace Projeto2bim_Paint
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel_formas);
             panel2.Controls.Add(lbl_utilidades);
             panel2.Controls.Add(panel_tamanho);
@@ -682,9 +683,9 @@ namespace Projeto2bim_Paint
             panel2.Controls.Add(panel_contorno);
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(lbl_formas);
-            panel2.Location = new Point(1, 0);
+            panel2.Location = new Point(-8, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1626, 156);
+            panel2.Size = new Size(1635, 156);
             panel2.TabIndex = 7;
             // 
             // Form1
