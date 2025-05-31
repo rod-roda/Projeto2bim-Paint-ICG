@@ -11,6 +11,7 @@ using System.Diagnostics;
 using Microsoft.VisualBasic;
 using System.Threading.Tasks.Sources;
 using System.Runtime.ConstrainedExecution;
+using System.Drawing.Drawing2D;
 
 namespace Projeto2bim_Paint
 {
@@ -81,7 +82,8 @@ namespace Projeto2bim_Paint
         Pen caneta_estilo(int espessura, Color cor, float[] estilo = null)
         {
             Pen caneta = new Pen(cor, espessura);
-            caneta.DashPattern = estilo;
+            if (estilo != null) caneta.DashPattern = estilo;
+            else caneta.DashStyle = DashStyle.Solid;
             return caneta;
         }
 
@@ -513,7 +515,7 @@ namespace Projeto2bim_Paint
         {
             if (cbbox_contorno.SelectedIndex == 1)
             {
-                return new float[] { 1f };
+                return null;
             }
             else if (cbbox_contorno.SelectedIndex == 2)
             {
@@ -533,7 +535,7 @@ namespace Projeto2bim_Paint
             }
             else
             {
-                return new float[] { 1f };
+                return null;
             }
         }
 
@@ -608,7 +610,10 @@ namespace Projeto2bim_Paint
                         writer.WriteLine(string.Join(",", posicoes));
                         writer.WriteLine($"{caneta.Color.R},{caneta.Color.G},{caneta.Color.B}");
                         writer.WriteLine($"{(int)caneta.Width}");
-                        writer.WriteLine(string.Join(",", caneta.DashPattern));
+                        if (caneta.DashStyle != DashStyle.Solid)
+                            writer.WriteLine(string.Join(",", caneta.DashPattern));
+                        else
+                            writer.WriteLine("solid");
 
                         writer.WriteLine();
                     }
@@ -683,9 +688,16 @@ namespace Projeto2bim_Paint
                         espessura = int.Parse(linha.Trim());
                         break;
                     case 4:
-                        estilo = linha.Split(',')
-                                      .Select(s => float.TryParse(s.Trim(), out float f) ? f : 1f)
-                                      .ToArray();
+                        if (linha.Trim() == "solid" || string.IsNullOrWhiteSpace(linha))
+                        {
+                            estilo = null;
+                        }
+                        else
+                        {
+                            estilo = linha.Split(',')
+                                          .Select(s => float.TryParse(s.Trim(), out float f) ? f : 1f)
+                                          .ToArray();
+                        }
                         break;
                 }
 
